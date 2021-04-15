@@ -1,0 +1,115 @@
+<div class="row mt-5">
+    <div class="col-md-2"></div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Forma de Entrega</h4>
+                <div class="row">
+                    <div class="col">
+                        <form class="form-sample">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label class="col col-form-label">Seleccione metodo de entrega</label>
+                                        <div class="col-sm-9">
+                                            <select [(ngModel)]="tarjeta" name="tarjeta" class="form-control"
+                                                (ngModelChange)="cambioEnvio()">
+                                                <option value="false">Recoger en Restaurante</option>
+                                                <option value="true">Envio a Domicilio</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="div" *ngIf="envioDomicilio">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Si su pedido sera enviado a su domicilio
+                                                ingrese
+                                                y/o confirme direccion</label>
+                                            <input name="cajaT" id="cajaT" [(ngModel)]="domicilio" type="text"
+                                                class="form-control" placeholder="Domicilio">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+
+
+<div class="row mt-5">
+    <div class="col-md-2"></div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Metodo de pago</h4>
+
+                <div class="row">
+                    <div class="col-md-4"><img class="img-fluid w-100 rounded"
+                            src="https://www.pngpix.com/wp-content/uploads/2016/11/PNGPIX-COM-Credit-Card-Vector-PNG-Transparent-Image.png"
+                            alt=""></div>
+                    <div class="col-md-8">
+                        <form class="form-sample">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label class="col col-form-label">Numero de Tarjeta</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" [(ngModel)]="numero_nuevo"
+                                                name="numero_nuevo" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label class="col col-form-label">Nombre en Tarjeta</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" [(ngModel)]="nombre_nuevo"
+                                                name="nombre_nuevo" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label class="col col-form-label">Fecha de Expiración</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" [(ngModel)]="mes_expiracion"
+                                                name="mes_expiracion" placeholder="mes" />
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" [(ngModel)]="ano_expiracion"
+                                                name="ano_expiracion" placeholder="año" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label class="col col-form-label">Codigo Seguridad</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" [(ngModel)]="codigo_nuevo"
+                                                name="codigo_nuevo" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <button type="submit" (click)="crearorden()" class="btn btn-success mr-2">Confirmar
+                            Orden</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>

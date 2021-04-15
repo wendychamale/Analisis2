@@ -1,0 +1,13 @@
+<div class="row" >
+    <div *ngFor="let card of Lrestaurantes">
+        <div class="card text-white bg-inverse-primary mb-3 mx-3" >
+            <div class="card-header text-warning aling-center">
+            </div>
+            <div class="card-body" style="text-align: center">  
+                <h4 class="card-text text-primary font-weight-bold bg-gradient-primary">{{card.name}}</h4>
+                <h4 class="card-text text-dark ">Direccion: {{card.domicilio}}</h4>
+                <button type="button" id="Registro" (click)="almacenar(card.id,card.domicilio,card.nombre)" class="btn btn-dark btn-rounded btn-xs"><i class="mdi mdi-shopping-outline"></i>Ver Catalogo</button>      
+            </div>
+        </div>
+    </div>
+</div>

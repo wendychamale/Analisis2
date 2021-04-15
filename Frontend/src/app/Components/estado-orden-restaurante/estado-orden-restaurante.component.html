@@ -1,0 +1,51 @@
+
+<!-- Tabla de Productos-->
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">MIS ORDENES</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th> </th>
+                            <th> ID </th>
+                            <th> Fecha </th>
+                            <th> Dirección Entrega </th>
+                            <th> Estado Orden </th>
+                            <th> Acciones </th>>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Repitencia-->
+                        <tr *ngFor="let orden of ordenes">
+                            <td>
+                                <img class="mr-2" src="../../../assets/images/menu_icons/88.png" alt="image" />
+                            </td>
+                            <td>
+                                {{orden._id}}
+                            </td>
+                            <td>
+                                <!--{{producto.categorias}}-->
+                                {{orden.createdAt}}
+                            </td>
+                            <td>
+                                {{orden.address}}
+                            </td>
+                            <td>
+                                {{orden.status.name}}
+                            </td>
+                            <td>
+                                <button type="button" class="btn social-btn btn-primary py-0 px-0 mr-2"><i
+                                    class="mdi mdi-36px mdi-settings"
+                                    (click)="editar(orden._id)"></i></button>
+                            <button type="button" class="btn social-btn btn-danger  py-0 px-0 "><i
+                                    class="mdi mdi-36px mdi-delete" (click)="cancelar(orden._id)"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

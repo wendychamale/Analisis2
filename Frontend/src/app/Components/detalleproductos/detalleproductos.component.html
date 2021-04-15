@@ -1,0 +1,14 @@
+<div class="card bg-dark text-white col-9 grid-margin center">
+    <img class="card-img" src="{{imgUrl}}" alt="Card image"  width="140" height="380">
+    <div class="card-body">
+    <p class="font-weight-bold  bg-gradient-secondary text-justify text-warning">{{name}}</p>    
+      <p class="card-text">{{description}}</p>
+      <p class="card-text">Precio: Q.{{price}}</p>
+      <p class="card-text">Descuento: {{discounts}}%</p>
+      <button type="button" id="Registro" (click)="almacenar(name,description,price,imgUrl,_id,discounts)" class="btn btn-success btn-rounded btn-sm"><i class="mdi mdi-shopping-outline"></i>Agregar a carrito</button>
+      <button type="button" id="comprar" (click)="ircarrito()" class="btn btn-primary btn-rounded btn-sm btn-aling-center"><i class="fa fa-shopping-cart"></i>VER CARRITO</button>
+      <div id="res">
+      </div>   
+    </div>
+  </div>
+ 

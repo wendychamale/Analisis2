@@ -1,0 +1,68 @@
+<div style="text-align: center">
+    <button type="button" id="comprar" (click)="ircarrito()" class="btn btn-primary btn-sm btn-aling-center"><i class="fa fa-shopping-cart"></i>VER CARRITO</button>
+</div>
+<p></p>
+
+<div class="">
+     <tr>
+        <td>    
+        <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb breadcrumb-custom bg-inverse-success">
+              <li class="breadcrumb-item"><button class="btn btn-success btn-rounded btn-xs" type="button"   >Productos en Oferta</button></li>
+              <li class="breadcrumb-item active" aria-current="page"></li>
+              <li class="breadcrumb-item"><div class="badge badge-pill badge-success">{{noferta}}</div></li>
+             
+            </ol>
+          </nav>
+        </td>
+     </tr>
+</div>
+<div class="row" >
+    <div *ngFor="let card of card" class="col-3">
+        <div class="card text-white bg-inverse-primary mb-3" style="max-width: 50rem;" >
+            <div class="card-header text-warning aling-center">
+                <img src="{{card.imgUrl}}" class="aling-center"  width="140" height="140">           
+            </div>
+            <div class="card-body" style="text-align: center">  
+                <h4 class="card-text text-primary font-weight-bold bg-gradient-primary">{{card.name}}</h4>
+                <h4 class="card-text text-dark ">Precio   Q.{{card.price}}</h4>
+                <button type="button" id="verp" (click)="verp(card._id)" class="btn btn-dark btn-rounded btn-xs"><i class="mdi mdi-food-variant"></i>Ver Producto</button>
+                <h4 class="card-text text-dark "></h4>
+                <button type="button" id="Registro" (click)="almacenar(card.name,card.description,card.price,card.imgUrl,card._id,card.discounts)" class="btn btn-dark btn-rounded btn-xs"><i class="mdi mdi-shopping-outline"></i>Agregar a carrito</button>
+               
+                <div id={{card.name+card.price}}>
+                </div>      
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <nav aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb breadcrumb-custom bg-inverse-primary">
+          <li class="breadcrumb-item"><button class="btn btn-primary btn-rounded btn-xs" type="button" >Otros Productos</button></li>
+          <li class="breadcrumb-item active" aria-current="page"></li>    
+        </ol>
+      </nav>
+  </div>
+
+<div class="row" >
+    <div *ngFor="let card of cards" class="col-3">
+        <div class="card text-white bg-inverse-primary mb-3" style="max-width: 50rem;" >
+            <div class="card-header text-warning aling-center">
+                <img src="{{card.imgUrl}}" class="aling-center"  width="140" height="140">           
+            </div>
+            <div class="card-body" style="text-align: center">  
+                <h4 class="card-text text-primary font-weight-bold bg-gradient-primary">{{card.name}}</h4>
+                <h4 class="card-text text-dark ">Precio   Q.{{card.price}}</h4>
+                <button type="button" id="verp" (click)="verp(card._id)" class="btn btn-dark btn-rounded btn-xs"><i class="mdi mdi-food-variant"></i>Ver Producto</button>
+                <h4 class="card-text text-dark "></h4>
+                <button type="button" id="Registro" (click)="almacenar(card.name,card.description,card.price,card.imgUrl,card._id,card.discounts)" class="btn btn-dark btn-rounded btn-xs"><i class="mdi mdi-shopping-outline"></i>Agregar a carrito</button>
+               
+                <div id={{card.name+card.price}}>
+                </div>      
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,43 @@
+
+<!-- Tabla de Productos-->
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">MIS ORDENES</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th> </th>
+                            <th> Fecha </th>
+                            <th> Restaurante </th>
+                            <th> Derección Entrega </th>
+                            <th> Estado Orden </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Repitencia-->
+                        <tr *ngFor="let orden of ordenes">
+                            <td>
+                                <img class="mr-2" src="../../../assets/images/menu_icons/88.png" alt="image" />
+                            </td>
+                            <td>
+                                {{orden.createdAt}}
+                            </td>
+                            <td>
+                                <!--{{producto.categorias}}-->
+                                {{orden.restaurantId.name}}
+                            </td>
+                            <td>
+                                {{orden.address}}
+                            </td>
+                            <td>
+                                {{orden.status.name}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
