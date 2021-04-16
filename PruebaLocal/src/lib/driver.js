@@ -43,6 +43,10 @@ var Page = function() {
     return await this.driver.findElement(By.name(name));
 };
 
+this.SendClick = async function(name) {
+    await this.driver.wait(until.elementLocated(By.name(name)), 15000, 'Looking for element');
+    return await (await this.driver.findElement(By.name(name))).click();
+};
 
  // fill input web elements
 this.write = async function(el, txt) {

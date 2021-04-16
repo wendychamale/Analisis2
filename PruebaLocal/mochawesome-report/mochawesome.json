@@ -1,25 +1,25 @@
 {
   "stats": {
-    "suites": 1,
-    "tests": 3,
-    "passes": 3,
+    "suites": 2,
+    "tests": 6,
+    "passes": 4,
     "pending": 0,
-    "failures": 0,
-    "start": "2021-04-16T06:48:41.994Z",
-    "end": "2021-04-16T06:48:53.362Z",
-    "duration": 11368,
-    "testsRegistered": 3,
-    "passPercent": 100,
+    "failures": 2,
+    "start": "2021-04-16T09:04:49.653Z",
+    "end": "2021-04-16T09:06:37.435Z",
+    "duration": 107782,
+    "testsRegistered": 6,
+    "passPercent": 66.7,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "passPercentClass": "success",
+    "passPercentClass": "warning",
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "6a929e67-0946-400e-9ec7-ce16534a0d98",
+    "uuid": "9adede3b-9911-4501-a6ca-c7b37b5b5a50",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,23 +28,23 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "e448ac0f-2857-471a-afc0-7ae9d1219270",
-        "title": "Testeo para la busqueda automatizada en Google",
-        "fullFile": "D:\\Universidad\\1er Semestre 2021\\Analisis 2\\Lab\\Analisis2\\Pruebas\\src\\test\\google_test.js",
+        "uuid": "e18e431f-f9b6-4cc4-a395-091c77d0184c",
+        "title": "Testeo  automatizado autentificacion correcta",
+        "fullFile": "C:\\Users\\WendyChamale\\Desktop\\analisis\\Analisis2\\PruebaLocal\\src\\test\\google_test.js",
         "file": "\\src\\test\\google_test.js",
         "beforeHooks": [
           {
             "title": "\"before each\" hook",
-            "fullTitle": "Testeo para la busqueda automatizada en Google \"before each\" hook",
+            "fullTitle": "Testeo  automatizado autentificacion correcta \"before each\" hook",
             "timedOut": false,
-            "duration": 2504,
+            "duration": 12127,
             "pass": false,
             "fail": false,
             "pending": false,
-            "code": "page = new Page();\ndriver = page.driver;\nawait page.visit('https://www.google.com/');",
+            "code": "page = new Page();\ndriver = page.driver;\nawait page.visit('http://localhost:4200/login');",
             "err": {},
             "isRoot": false,
-            "uuid": "88ed4ec9-3514-42bb-a587-e87bd3411cce",
+            "uuid": "0bc07a97-ba6d-4713-917e-54abff442da0",
             "isHook": true,
             "skipped": false
           }
@@ -52,60 +52,62 @@
         "afterHooks": [
           {
             "title": "\"after each\" hook",
-            "fullTitle": "Testeo para la busqueda automatizada en Google \"after each\" hook",
+            "fullTitle": "Testeo  automatizado autentificacion correcta \"after each\" hook",
             "timedOut": false,
-            "duration": 99,
+            "duration": 1136,
             "pass": false,
             "fail": false,
             "pending": false,
             "code": "await page.quit();",
             "err": {},
             "isRoot": false,
-            "uuid": "d23be9ba-f8f2-4021-86b9-a5bc4de9211d",
+            "uuid": "377ef588-7b4b-4476-a289-d551b4a47130",
             "isHook": true,
             "skipped": false
           }
         ],
         "tests": [
           {
-            "title": "Buscar la caja texto y el boton de busqueda",
-            "fullTitle": "Testeo para la busqueda automatizada en Google Buscar la caja texto y el boton de busqueda",
+            "title": "Buscar caja usuario, contraseña y el boton de login",
+            "fullTitle": "Testeo  automatizado autentificacion correcta Buscar caja usuario, contraseña y el boton de login",
             "timedOut": false,
-            "duration": 75,
-            "state": "passed",
-            "speed": "medium",
-            "pass": true,
-            "fail": false,
-            "pending": false,
-            "code": "const result = await page.findInputAndButton();\nexpect(result.inputEnabled).to.equal(true);\nexpect(result.buttonText).to.include('Google');",
-            "err": {},
-            "isRoot": false,
-            "uuid": "68383dde-66f4-4c8b-8968-986c2e7adedd",
-            "isHook": false,
-            "skipped": false
-          },
-          {
-            "title": "Mostrar el numero total de resultados a partir de una busqueda",
-            "fullTitle": "Testeo para la busqueda automatizada en Google Mostrar el numero total de resultados a partir de una busqueda",
-            "timedOut": false,
-            "duration": 1782,
+            "duration": 162,
             "state": "passed",
             "speed": "slow",
             "pass": true,
             "fail": false,
             "pending": false,
-            "code": "const result = await page.submitKeywordAndGetResult();\n//console.log(result);\nexpect(result.length).to.be.above(10);",
+            "code": "const result = await page.findInputAndButton();\nexpect(result.inputEnabledU).to.equal(true);\nexpect(result.inputEnabledC).to.equal(true);\nexpect(result.buttonText).to.include('Entrar');",
             "err": {},
             "isRoot": false,
-            "uuid": "a2c09e0a-e79b-47a2-beda-d0dba166be00",
+            "uuid": "6f1837d0-acb5-4f4a-b6ac-08181b8995e9",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Mostrar Pagina de Inicio de Sesion",
+            "fullTitle": "Testeo  automatizado autentificacion correcta Mostrar Pagina de Inicio de Sesion",
+            "timedOut": false,
+            "duration": 15559,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "const result = await page.submitKeywordAndGetResult();\n//console.log(result);\nexpect(result.length).to.be.above(10);",
+            "err": {
+              "message": "TimeoutError: Looking for element\nWait timed out after 15018ms",
+              "estack": "TimeoutError: Looking for element\nWait timed out after 15018ms\n    at C:\\Users\\WendyChamale\\Desktop\\analisis\\Analisis2\\PruebaLocal\\node_modules\\selenium-webdriver\\lib\\webdriver.js:894:17\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)"
+            },
+            "isRoot": false,
+            "uuid": "abf26d52-b2ce-4c99-94e9-643f0137e9e2",
             "isHook": false,
             "skipped": false
           },
           {
             "title": "Mostrar el titulo de la ventana",
-            "fullTitle": "Testeo para la busqueda automatizada en Google Mostrar el titulo de la ventana",
+            "fullTitle": "Testeo  automatizado autentificacion correcta Mostrar el titulo de la ventana",
             "timedOut": false,
-            "duration": 3,
+            "duration": 6,
             "state": "passed",
             "speed": "fast",
             "pass": true,
@@ -114,21 +116,131 @@
             "code": "var title = driver.getTitle();\nconsole.log(title)\n//expect(title).to.include('Google');",
             "err": {},
             "isRoot": false,
-            "uuid": "4ed15f95-5b2f-4c9b-b18e-a4f1b318269e",
+            "uuid": "d7963ee3-616b-4ed2-9234-5cfc88c93de1",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "68383dde-66f4-4c8b-8968-986c2e7adedd",
-          "a2c09e0a-e79b-47a2-beda-d0dba166be00",
-          "4ed15f95-5b2f-4c9b-b18e-a4f1b318269e"
+          "6f1837d0-acb5-4f4a-b6ac-08181b8995e9",
+          "d7963ee3-616b-4ed2-9234-5cfc88c93de1"
         ],
-        "failures": [],
+        "failures": [
+          "abf26d52-b2ce-4c99-94e9-643f0137e9e2"
+        ],
         "pending": [],
         "skipped": [],
-        "duration": 1860,
+        "duration": 15727,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 50000
+      },
+      {
+        "uuid": "40f4ece8-6b24-4b34-b950-3324cd148ec4",
+        "title": "Testeo  automatizado autentificacion incorrecta",
+        "fullFile": "C:\\Users\\WendyChamale\\Desktop\\analisis\\Analisis2\\PruebaLocal\\src\\test\\google_test.js",
+        "file": "\\src\\test\\google_test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before each\" hook",
+            "fullTitle": "Testeo  automatizado autentificacion incorrecta \"before each\" hook",
+            "timedOut": false,
+            "duration": 11334,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "page = new Page();\ndriver = page.driver;\nawait page.visit('http://localhost:4200/login');",
+            "err": {},
+            "isRoot": false,
+            "uuid": "1b3a9a88-8928-4cd5-bf8d-7211a29c94ca",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after each\" hook",
+            "fullTitle": "Testeo  automatizado autentificacion incorrecta \"after each\" hook",
+            "timedOut": false,
+            "duration": 8358,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "await page.quit();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "6bce01e3-b415-4f62-b4d4-ea26a6f8f981",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "Buscar caja usuario, contraseña y el boton de login",
+            "fullTitle": "Testeo  automatizado autentificacion incorrecta Buscar caja usuario, contraseña y el boton de login",
+            "timedOut": false,
+            "duration": 158,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const result = await page.findInputAndButton();\nexpect(result.inputEnabledU).to.equal(true);\nexpect(result.inputEnabledC).to.equal(true);\nexpect(result.buttonText).to.include('Entrar');",
+            "err": {},
+            "isRoot": false,
+            "uuid": "4d191b0c-a072-4d9d-b204-ca3de370a46b",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Mostrar mensaje credenciales incorrectas",
+            "fullTitle": "Testeo  automatizado autentificacion incorrecta Mostrar mensaje credenciales incorrectas",
+            "timedOut": false,
+            "duration": 16023,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "const result = await page.submitKeywordAndGetResult();\n//console.log(result);\nexpect(result.length).to.be.above(10);",
+            "err": {
+              "message": "TimeoutError: Looking for element\nWait timed out after 15156ms",
+              "estack": "TimeoutError: Looking for element\nWait timed out after 15156ms\n    at C:\\Users\\WendyChamale\\Desktop\\analisis\\Analisis2\\PruebaLocal\\node_modules\\selenium-webdriver\\lib\\webdriver.js:894:17\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)"
+            },
+            "isRoot": false,
+            "uuid": "48a8a4d6-5c6e-4dc7-952b-b7e2c10edca0",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Mostrar el titulo de la ventana",
+            "fullTitle": "Testeo  automatizado autentificacion incorrecta Mostrar el titulo de la ventana",
+            "timedOut": false,
+            "duration": 63,
+            "state": "passed",
+            "speed": "medium",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "var title = driver.getTitle();\nconsole.log(title)\n//expect(title).to.include('Google');",
+            "err": {},
+            "isRoot": false,
+            "uuid": "45508fd1-b234-4f0c-afb3-bdc5f183a4f5",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "4d191b0c-a072-4d9d-b204-ca3de370a46b",
+          "45508fd1-b234-4f0c-afb3-bdc5f183a4f5"
+        ],
+        "failures": [
+          "48a8a4d6-5c6e-4dc7-952b-b7e2c10edca0"
+        ],
+        "pending": [],
+        "skipped": [],
+        "duration": 16244,
         "root": false,
         "rootEmpty": false,
         "_timeout": 50000
