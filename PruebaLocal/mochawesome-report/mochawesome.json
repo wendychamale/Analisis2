@@ -1,0 +1,147 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-04-16T06:48:41.994Z",
+    "end": "2021-04-16T06:48:53.362Z",
+    "duration": 11368,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "6a929e67-0946-400e-9ec7-ce16534a0d98",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "e448ac0f-2857-471a-afc0-7ae9d1219270",
+        "title": "Testeo para la busqueda automatizada en Google",
+        "fullFile": "D:\\Universidad\\1er Semestre 2021\\Analisis 2\\Lab\\Analisis2\\Pruebas\\src\\test\\google_test.js",
+        "file": "\\src\\test\\google_test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before each\" hook",
+            "fullTitle": "Testeo para la busqueda automatizada en Google \"before each\" hook",
+            "timedOut": false,
+            "duration": 2504,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "page = new Page();\ndriver = page.driver;\nawait page.visit('https://www.google.com/');",
+            "err": {},
+            "isRoot": false,
+            "uuid": "88ed4ec9-3514-42bb-a587-e87bd3411cce",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after each\" hook",
+            "fullTitle": "Testeo para la busqueda automatizada en Google \"after each\" hook",
+            "timedOut": false,
+            "duration": 99,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "await page.quit();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "d23be9ba-f8f2-4021-86b9-a5bc4de9211d",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "Buscar la caja texto y el boton de busqueda",
+            "fullTitle": "Testeo para la busqueda automatizada en Google Buscar la caja texto y el boton de busqueda",
+            "timedOut": false,
+            "duration": 75,
+            "state": "passed",
+            "speed": "medium",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const result = await page.findInputAndButton();\nexpect(result.inputEnabled).to.equal(true);\nexpect(result.buttonText).to.include('Google');",
+            "err": {},
+            "isRoot": false,
+            "uuid": "68383dde-66f4-4c8b-8968-986c2e7adedd",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Mostrar el numero total de resultados a partir de una busqueda",
+            "fullTitle": "Testeo para la busqueda automatizada en Google Mostrar el numero total de resultados a partir de una busqueda",
+            "timedOut": false,
+            "duration": 1782,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const result = await page.submitKeywordAndGetResult();\n//console.log(result);\nexpect(result.length).to.be.above(10);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "a2c09e0a-e79b-47a2-beda-d0dba166be00",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Mostrar el titulo de la ventana",
+            "fullTitle": "Testeo para la busqueda automatizada en Google Mostrar el titulo de la ventana",
+            "timedOut": false,
+            "duration": 3,
+            "state": "passed",
+            "speed": "fast",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "var title = driver.getTitle();\nconsole.log(title)\n//expect(title).to.include('Google');",
+            "err": {},
+            "isRoot": false,
+            "uuid": "4ed15f95-5b2f-4c9b-b18e-a4f1b318269e",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "68383dde-66f4-4c8b-8968-986c2e7adedd",
+          "a2c09e0a-e79b-47a2-beda-d0dba166be00",
+          "4ed15f95-5b2f-4c9b-b18e-a4f1b318269e"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 1860,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 50000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2021
+}
